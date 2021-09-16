@@ -1,7 +1,15 @@
 #!/usr/bin/python
 # -*- coding: utf-8-*-
 
-from pyrogram import Client, MessageHandler, Filters
+from pyrogram import Client#, Filters, MessageHandler
+try:
+    from pyrogram import MessageHandler                  
+except ImportError:
+    from pyrogram.handlers import MessageHandler 
+try:
+    from pyrogram import Filters                  
+except ImportError:
+    from pyrogram import filters                                
 from numpy.random import randint
 import re
 import time
